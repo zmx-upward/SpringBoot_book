@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<!--    <base href="<%=basePath%>">-->
+
+    <title>编辑</title>
+
+</head>
+
+<body>
+<h1>修改书籍信息</h1>
+<form action="/update/{id}" th:action="@{/update}" method="POST" th:object="book">
+    <input type="hidden" name="id" value="${book.id}"/>
+    书籍名称：<input type="text" name="name" value="${book.name}" />
+    书籍数量：<input type="text" name="num" value="${book.num }"/>
+    <input type="submit" value="编辑"/>
+</form>
+</body>
+</html>
